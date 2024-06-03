@@ -1,0 +1,328 @@
+1 - Preparando o Express
+
+    Qual das opções abaixo é responsável por importar o Express.js em uma aplicação Node?
+
+    Opção B: 
+        const express = require('express');
+        const app = express();
+
+
+
+2 - Corrigindo o problema
+
+    Corrija os erros do código abaixo selecionando a alternativa correta:
+
+    Opção D: 
+        const express = require('express');
+        const app = express();
+
+        let mensagem = {mensagem: 'Mensagem enviada'}
+
+        app.get('/', (req, res) => {
+
+        res.send(mensagem)
+        });
+        app.listen(8080 , () => {
+        console.log('Servidor iniciado');
+        });
+
+
+
+3 - Completando no formato REST
+
+    Complete o código abaixo para que ele retorne uma resposta para uma requisição do front-end
+    considerando os requisitos do padrão REST:
+    - Utilizar a porta 8080
+    - Utilizar let na declaração das variáveis
+
+
+    const express = require('express');
+    const app = express();
+
+    let nome = {nome: 'Marcus Fenix'};
+
+    app.get('/', (req, res) => {
+        res.json(nome);
+    });
+
+    app.listen(8080, () => {
+        console.log("Servidor iniciado");
+    });
+
+
+
+4 - Concurso público
+
+    Para ser classificado em um concurso público, o candidato precisa ter nota maior que 7.
+    Utilizando if ternário, complete o código para que isso seja feito:
+
+    - A variável 'resultado' deve receber o if ternário. Se 'nota' for maior que 7 o valor 'Classificado'
+    deve ser atribuído à variável resultado;
+    - Se 'nota' não for maior que 7 o valor 'Desclassificado' deve ser atribuído à variável resultado;
+    - O valor retornado na resposta deve ser um json com chave 'resultado' e o valor deve ser a
+    variável resultado.
+    - Declarar as variáveis com let
+
+
+    const express = require('express');
+    const app = express();
+
+    let nota = 8;
+    let resultado = nota > 7 ? 'Classificado' : 'Desclassificado';
+
+    app.get('/', (req, res) => {
+        res.json({ resultado: resultado });
+    });
+
+    app.listen(8080, () => {
+        console.log('Servidor iniciado');
+    });
+
+
+
+5 - Completando o código
+
+    Qual das alternativas a seguir completa corretamente o código:
+
+    Opção D: 
+        const express = require('express');
+        const app = express();
+
+        let mensagem = {mensagem: 'Mensagem do servidor'};
+
+        app.get('/', (req, res) => {
+            res.json(mensagem);
+        });
+
+        app.listen(8080, () => {
+            console.log("Servidor iniciado");
+        });
+
+
+
+6 - Complete o código
+
+    Complete o código com as partes faltantes para enviar um JSON contendo o dia do mês atual
+    para o front-end:
+    - Utilizar require
+    - Utilizar let na declaração das variáveis
+
+
+    const express = require('express');
+    const application = express();
+
+    let data = new Date();
+    let dia_mes = {dia: data.getDate()};
+
+    application.get('/', (req, res) => {
+        res.json(dia_mes);
+    });
+
+    application.listen(8080, () => {
+        console.log("Servidor iniciado");
+    });
+
+
+
+7 - Celular válido
+
+    Complete o código abaixo para que ele seja capaz de verificar se um número de celular é
+    válido:
+    - O número é considerado válido se tiver exatamente 14 caracteres ((xx)xxxxx-xxxx);
+    - A variável 'valido' deve retornar true ou false utilizando um if ternário para checar o tamanho
+    da string celular;
+    - O JSON possui chave 'telefone' e o valor é a variável 'valido'.
+    - Declarar as variáveis com let
+
+
+    const express = require('express');
+    const app = express();
+
+    let celular = '(21)99999-9999';
+    let valido = celular.length === 14 ? true : false;
+
+    app.get('/', (req, res) => {
+        res.json({ telefone: valido });
+    });
+
+    app.listen(8080, () => {
+        console.log('Servidor iniciado');
+    });
+
+
+
+8 - Jogo
+
+    Qual das alternativas a seguir completa corretamente o código:
+
+    OBS.: Seguir os requisitos do padrão REST
+
+    Opção A:
+        const express = require('express');
+        const application = express();
+
+        let jogo = {jogo: 'Gears of War 2'};
+
+        application.get('/', (req, res) => {
+            res.json(jogo);
+        });
+
+        application.listen(8080, () => {
+            console.log('O servidor iniciou');
+        });
+
+
+
+9 - Alternativa correta
+
+    Qual das alternativas completa o código abaixo corretamente:
+
+    Opção D:
+        const express = require('express');
+        const app = express();
+
+        let data = new Date();
+
+        app.get('/', (req, res) => {
+            let data_atual = data.getDate();
+            let data_json = { data: data_atual };
+            res.json(data_json);
+        });
+
+        app.listen(8080, () => {
+            console.log('Servidor iniciado');
+        });
+
+
+
+10 - Hora atual
+
+    Complete o código abaixo para que após receber uma requisição via get ele envie uma resposta
+    com a hora atual do servidor (apenas a hora, sem minutos):
+    OBS.: Utilizar o Date() do JavaScript
+
+    Opção B:
+        const express = require('express');
+        const app = express();
+
+        let data = new Date();
+
+        app.get('/', (req, res) => {
+            let hora_atual = data.getHours();
+            let hora_json = { hora: hora_atual };
+            res.json(hora_json);
+        });
+
+        app.listen(8080, () => {
+            console.log("Servidor iniciado");
+        });
+
+
+
+11 - E-mail
+
+    Corrija os erros do código abaixo selecionando a alternativa correta:
+
+    Opção C:
+        const express = require('express');
+        const application = express();
+
+        let email = 'johndoe@email.com';
+
+        application.get('/', (req, res) => {
+            res.json(email);
+        });
+
+        application.listen(8080, () => {
+            console.log("Servidor iniciado");
+        });
+
+
+
+12 - Padrão REST
+
+    Qual das alternativas abaixo retorna uma resposta para uma requisição do front-end
+    considerando os requisitos do padrão REST?
+
+    Opção D:
+        const express = require('express');
+        const app = express();
+
+        let nome = {nome: 'Marcus Fenix'};
+
+        app.get('/', (req, res) => {
+            res.json(nome);
+        });
+
+        app.listen(8080, () => {
+            console.log("Servidor iniciado");
+        });
+
+
+
+13 - Verbos HTTP
+
+    Complete os campos abaixo com o verbo HTTP correto:
+
+    DELETE - exclui dados
+    POST - insere dados
+    PUT - atualiza dados
+    GET - retorna dados
+
+
+
+14 - Nome e sobrenome
+
+    Selecione a alternativa que implementa corretamente o código descrito nas instruções:
+    - O código possui quatro variáveis nome, sobrenome, nome_completo e nome_json;
+    - nome possui o valor 'Jack' e sobrenome o valor 'Joyce';
+    - nome_completo concatena os valores de nome e sobrenome;
+    - A aplicação express envia como resposta a variável nome_json.
+
+    Opção D:
+        const express = require('express');
+        const app = express();
+
+        let nome = 'Jack';
+        let sobrenome = 'Joyce';
+
+        let nome_completo = nome + " " + sobrenome;
+
+        let nome_json = { nome: nome_completo };
+
+        app.get('/', (req, res) => {
+            res.json(nome_json);
+        });
+
+        app.listen(8080, () => {
+            console.log("Servidor iniciado");
+        });
+
+
+
+15 - Estações do ano
+
+    Qual das alternativas abaixo completa o código para que ele consiga retornar a estação do ano
+    com base no mês atual?
+
+    Opção B:
+        const express = require('express');
+        const app = express();
+        let data = new Date();
+        let mes = data.getMonth();
+        let estacaoAno;
+        if (mes == 0 || mes == 1 || mes == 2) {
+            estacaoAno = 'Verão';
+        } else if (mes == 3 || mes == 4 || mes == 5) {
+            estacaoAno = 'Outono';
+        } else if (mes == 6 || mes == 7 || mes == 8) {
+            estacaoAno = 'Inverno';
+        } else {
+            estacaoAno = 'Primavera';
+        }
+        app.get('/', (req, res) => {
+            res.json({ estacao: estacaoAno });
+        });
+        app.listen(8080, () => {
+            console.log('Servidor iniciado');
+        });
